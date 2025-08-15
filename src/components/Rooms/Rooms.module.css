@@ -1,0 +1,230 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: #f8f5f2;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #e8c07d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.highlight {
+  color: #e8c07d;
+  font-style: italic;
+}
+
+.sectionDivider {
+  width: 80px;
+  height: 3px;
+  background-color: #e8c07d;
+  margin: 0 auto 2rem auto;
+}
+
+.sectionDescription {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.roomsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.roomCard {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.roomCard.selected,
+.roomCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.roomImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.roomCard:hover .roomImage {
+  transform: scale(1.05);
+}
+
+.priceTag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 70%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.bookButton {
+  background: linear-gradient(135deg, #e8c07d, #b68a3d);
+  color: #1a1a1a;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bookButton svg {
+  transition: transform 0.3s ease;
+}
+
+.bookButton:hover svg {
+  transform: translateX(3px);
+}
+
+.roomInfo {
+  padding: 1.8rem;
+}
+
+.roomType {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.roomCapacity {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.roomCapacity::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 1px;
+  background-color: #e8c07d;
+}
+
+.roomFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.featureItem {
+  color: #4a5568;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  line-height: 1.5;
+}
+
+.featureItem svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .roomsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageContainer {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
+  }
+}
